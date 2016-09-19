@@ -1,0 +1,28 @@
+/* Main Styles */
+p {
+    font-family: cursive;
+    font-size: 14pt;
+}
+
+h1, h2, h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+}
+tr:nth-child(even) {
+    background-color: grey;
+}
+
+tr:nth-child(odd) {
+    background-color: yellow;
+}
+
+table {
+    width: 100%;
+}
+/* Custom Styles */
+
+/* Specific Styles */
+#p1 {
+    font-size: 50px;
+    font-weight: bold;
+}

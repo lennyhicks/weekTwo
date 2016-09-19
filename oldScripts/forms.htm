@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="site.css" />
+</head>
+
+<body>
+    <h1>Sign Up For My Website</h1>
+    <form action="mailto:auri@auri.net" method="post" enctype="text/plain">
+        <fieldset>
+            <!-- Begin Basic Details -->
+            <h1>Basic Info</h1>
+            <label>First Name: 
+                <input type="text" name="firstName" id="firstName" /></label><br />
+            <label>Last Name: 
+                <input type="text" name="lastName" id="lastName" /></label><br />
+            <label>Email Address: 
+                <input type="text" name="email" id="email" /></label><br />
+            <label>Get marketing junk? 
+                <input type="checkbox" name="optin" checked id="optin"/></label><br/>
+            <input type="submit" value="Sign me up!" />
+            <!-- End Basic Details -->
+
+            <hr />
+
+            <!-- Begin Additional Profile Details -->
+            <h1>Add'l Profile Info</h1>
+            <p>Choose your favorite movie:</p>
+            <select name="favMovie" id="favMovie">
+                <option value="1">Tron</option>
+                <option value="2">The Matrix</option>
+                <option value="3">Steel Magnolias</option>
+            </select>
+            <!-- End Additional Profile Details -->
+
+            <p>Additional comments:</p>
+            <textarea id="comments" name="comments" style="height: 100px; width: 300px"></textarea>
+
+        </fieldset>
+    </form>
+</body>
+
+</html>
