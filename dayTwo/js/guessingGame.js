@@ -16,9 +16,10 @@
         $("#guess").append(new Option("Give Up", "quit"));
 
 
-        $("#message").val("");
         $("#message").text("");
         $("#restartGame").hide();
+        $("#wrong").hide();
+        $("#win").hide();
 
         //Come up with answer
 
@@ -47,22 +48,25 @@
 
         var guess = $("#guess").val();
         guessAttempts++
+        $("#wrong").hide();
         if (guess == "quit") {
-
-            $("#message").text("You gave up on the game.");
-
-            $("#restartGame").show();
+            firstRun();
         } else if (+guess == answer) {
             //tell them the answer is right.
             wincount++;
             $("#message").text("Your guess of " + guess + " was Correct! You won the game " + wincount + " times now. It took you " + guessAttempts + " attempts");
             $("#btnGuess").hide();
             $("#restartGame").show();
+            $("#win").fadeIn();
+            $("#wrong").hide();
+
         } else {
             // tell them the answer is wrong.
 
             $("#guess option:selected").remove();
             $("#message").text("Your guess of " + guess + " was wrong! Try Again.");
+
+            $("#wrong").fadeIn();
         }
     }
 
@@ -79,12 +83,17 @@
         setVals();
 
     }
-    $(function() {
-        // Wire Up event Handlers
+
+    function firstRun() {
 
         $("#startGame").on("click", playGame);
         $("#btnGuess").on("click", handleGuess);
         $("#restartGame").on("click", restartGame);
 
         setUpGame();
+    }
+    $(function() {
+        // Wire Up event Handlers
+
+        firstRun();
     });

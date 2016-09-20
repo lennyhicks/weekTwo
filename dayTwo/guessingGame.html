@@ -5,6 +5,14 @@
     <title>Guessing Game</title>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="js/guessingGame.js"></script>
+    <style>
+        .right {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 200px;
+        }
+    </style>
 </head>
 
 <body>
@@ -29,9 +37,18 @@
                 <button id="restartGame" hidden>Restart Game</button>
                 <br>
                 <br>
-                <span id="message"></span>
+                                     <div id="win" hidden class="right">
+        <img src="https://media.giphy.com/media/tTyTbFF9uEbPW/giphy.gif" width=200>
+    </div>
+    <div id="wrong" hidden class="right">
+        <img src="http://www.cluburban.com/media/catalog/product/p/o/poop-emoji-phone-charger_1.jpg" width=200>
+    </div>
+                <span id="message">    
+
+    </span>
 
     </div>
+
 
 </body>
 
