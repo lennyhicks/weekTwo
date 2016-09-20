@@ -1,5 +1,7 @@
 function myButton_Click() {
-    alert("Clicked");
+    //alert("Clicked");
+    $("li:contains('mad')").hide();
+
 }
 
 $(function() {
