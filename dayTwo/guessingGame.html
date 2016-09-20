@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Guessing Game</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="js/guessingGame.js"></script>
+</head>
+
+<body>
+
+    <h1>Guessing Game</h1>
+
+
+    <div id="intro">
+        <p> Welcome to my guessing game. Click the button below to play.</p>
+        <button id="startGame">Play</button>
+    </div>
+
+    <div id="game" hidden>
+        <fieldset>
+            <label>What is your guess?
+                <br>
+                <br>
+                    <select id="guess">
+                    </select>
+                <button id="btnGuess">Guess!</button>
+
+                <button id="restartGame" hidden>Restart Game</button>
+                <br>
+                <br>
+                <span id="message"></span>
+
+    </div>
+
+</body>
+
+</html>

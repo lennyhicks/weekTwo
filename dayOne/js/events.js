@@ -12,7 +12,7 @@
         var guess = prompt("What is your Guess?");
 
         guess *= 1;
-        while (guess != randNumber || guess != "quit") {
+        do {
             if (guess == "quit") {
                 alert("You gave up on the game. The correct answer was " + randNumber);
                 break;
@@ -23,7 +23,8 @@
                 alert("You won the game. Your win count is now " + wincount);
                 break;
             }
-        }
+        } while (guess != randNumber || guess != "quit");
+
     }
 
     function sayHello() {
