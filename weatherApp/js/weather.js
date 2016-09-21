@@ -1,5 +1,6 @@
 var apiKey = "zyGGGEL5WHRFlesPSaAPJ2nbYIYtuvcq";
 var weather = [];
+var currentLocation;
 /*
  jQuery(document).ready(function($) {
      $("#searchtext").keyup(function() {
@@ -66,6 +67,8 @@ $(function() {
             }
         },
         getValue: function(element) {
+
+            currentLocation = (element.LocalizedName + ", " + element.AdministrativeArea.LocalizedName);
             return (element.LocalizedName + ", " + element.AdministrativeArea.LocalizedName);
         },
 
@@ -74,6 +77,10 @@ $(function() {
             onSelectItemEvent: function() {
                 var locationKey = $("#searchtext").getSelectedItemData().Key;
                 $("#searchtext").val(locationKey).trigger("change");
+
+                currentLocation = $("#searchtext").getSelectedItemData().LocalizedName +", "+ $("#searchtext").getSelectedItemData().AdministrativeArea.LocalizedName;
+                $("#searchtext").val(locationKey).trigger("change");
+                console.log(currentLocation);
                 getWeather();
             }
         }
@@ -87,12 +94,13 @@ function getWeather() {
     var locationKey = ($("#searchtext").val());
 
     // return "http://dataservice.accuweather.com/currentconditions/v1/" + locationKey + ".json?language=en&apikey=hoArfRosT1215";
-    $.getJSON("http://dataservice.accuweather.com/currentconditions/v1/" + locationKey + ".json?language=en&apikey=" + apiKey + "&callback=?", function(result) {
+    $.getJSON("http://dataservice.accuweather.com/currentconditions/v1/" + locationKey + ".json?language=en&apikey=" + apiKey + "&details=true&callback=?", function(result) {
         console.log(JSON.stringify(result));
 
         weather = result[0];
         console.log("Time: " + weather.LocalObservationDateTime);
         console.log("Temp: " + weather.Temperature.Imperial.Value + " F" + String.fromCharCode(176));
+        $("#currentLocation").text(currentLocation);
     });
 
 }

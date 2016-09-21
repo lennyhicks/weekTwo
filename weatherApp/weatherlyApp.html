@@ -20,30 +20,58 @@
     <link rel="stylesheet" href="css/easy-autocomplete.css">
     <script src="js/weather.js"></script>
     <link rel="stylesheet" href="css/weather-icons.css">
+    <link rel="stylesheet" href="css/weatherApp.css">
 
 
 
 </head>
 
 <body>
-    <div class="col-md-3" style="background-color:wheat; height:500px; border-radius:10px">
-        <div class="btn-group pull-right pull-up">
-            <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="glyphicon glyphicon-plus"></span>
+    <div class="col-md-3 nopadding" style="background-color:wheat; height:500px; border-radius:10px">
+
+        <!--       <div class="btn-group pull-left pull-up">
+            <button class="btn btn-default btn-lg dropdown-toggle buttonMenu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <span class="glyphicon glyphicon-align-justify"> </span>
         </button>
-            <ul class="dropdown-menu">
-                <li id="addLocation">Add Loction</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
-            </ul>
-
-
+            <h1><span id="currentLocation"></span>
+                <ul class="dropdown-menu">
+                    <li id="addLocation">Add Loction</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
         </div>
-        <i class="wi wi-day-sunny"></i>
-        <input id="searchtext" type="search"> </input>
+        <div class="col-md-12" style="; border-radius:10px">
+
+            <div class="btn-group pull-left pull-up">
+                <input id="searchtext" type="search"> </input>
+            </div>
+        </div>
+        -->
 
 
+
+        <nav class="navbar buttonMenu">
+            <div class="container-fluid">
+                <div class="navbar-header ">
+                    <button id="menuDropdown" class="navbar-brand glyphicon glyphicon-align-justify buttonMenu"></button>
+                </div>
+                <ul class="nav navbar-nav">
+
+                    <li>
+                        <a id="currentLocation" expanded></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="row">
+            <div class="col-md-12 vcenter">
+                <input id="searchtext" type="search"> </input>
+            </div>
+        </div>
     </div>
+
+
 </body>
 
 </html>
