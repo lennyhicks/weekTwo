@@ -1,4 +1,9 @@
 .buttonMenu {
+    background-color: transparent;
+    border: none !important;
+}
+
+.barMenu {
     background-color: #5C755E;
     border: none !important;
 }
